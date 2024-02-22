@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const app = express();
 const port =  process.env.PORT
-const mongoURI = 'mongodb+srv://moon:qwert1234@cluster0.gvga3.mongodb.net/';
+const mongoURI = process.env.db;
 const dbName = 'jabar-project';
 
 mongoose.connect(`${mongoURI}${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true })

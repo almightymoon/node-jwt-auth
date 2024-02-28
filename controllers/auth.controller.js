@@ -6,12 +6,12 @@ const jwt = require('jsonwebtoken');
 
 const signup = async (req, res) => {
   try {
-    const { firstName, lastName, email, password, role } = req.body;
+    const { firstName, lastName, email, password } = req.body;
     // Check if all required fields are provided
-    if (!firstName || !lastName || !email || !password || !role) {
+    if (!firstName || !lastName || !email || !password ) {
       return res.status(400).json({ message: 'All fields are required' });
     }
-
+    const role = "normal";
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {

@@ -6,9 +6,7 @@ const { signup, signin } = require('../controllers/auth.controller');
 
 router.post('/register', signup);
 router.post('/login', signin);
-router.get('/', (req, res) => {
-  res.send('jabaar project');
-});
+
 
 router.get('/hiddencontent', verifyToken, (req, res) => {
   if (!req.user) {

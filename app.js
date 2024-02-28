@@ -18,6 +18,10 @@ mongoose.connect(`${mongoURI}${dbName}`, { useNewUrlParser: true, useUnifiedTopo
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('jabaar project');
+});
+
 const authRoutes = require('./routes/authRoutes');
 const e = require('express');
 app.use('/auth', authRoutes);

@@ -32,3 +32,7 @@ router.get('/admin-route', verifyToken, isAdmin, (req, res) => {
 router.get('/user-route', verifyToken, (req, res) => {
     res.json({ message: 'Welcome, User!' });
 });
+
+router.get('/', (req, res) => {
+    res.send('jabaar project');
+  });

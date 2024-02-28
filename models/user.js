@@ -5,9 +5,13 @@ var mongoose = require('mongoose'),
  * User Schema
  */
 var userSchema = new Schema({
-  fullName: {
+  firstName: {
     type: String,
-    required: [true, "fullname not provided "],
+    required: [true, "first Name not provided "],
+  },
+  lastName: {
+    type: String,
+    required: [true, "Last Name not provided "],
   },
   email: {
     type: String,
@@ -27,11 +31,6 @@ var userSchema = new Schema({
     type: String,
     enum: ["normal", "admin"],
     required: [true, "Please specify user role"]
-  },
-  username: {
-    type: String,
-    required: true,
-    unique: true,
   },
   password: {
     type: String,
